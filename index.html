@@ -1,23 +1,42 @@
----
-layout: default
----
+<!DOCTYPE html>
 
-<div class="home">
+<meta charset="UTF-8">
 
-  <h1 class="page-heading">Posts</h1>
+<title>Home: db™ | DrewBro Designs</title>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+<link rel="stylesheet" href="assets/css/styles.css">
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="keywords" content="drew, drewbro, drewbro designs, ogryzek, drew ogryzek">
+<meta name="description" content="about db™ | DrewBro Designs">
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<div id="drewbro" class="container">
+  <nav class="nav nav-default">
+    <i class="logo"></i>
+    <ul>
+      <li><a href=""><div>home</div></a>
+      <li><a href=""><div>about</div></a>
+      <li><a href=""><div>portfolio</div></a>
+      <li><a href="mailto:drew@drewbro.com"><div>contact</div></a>
+    </ul>
+  </nav>
 
+  <section class="content-main">
+    <div>
+      <a href="http://www.github.com/ogryzek"><i class="fa fa-github fa-5x"></i></a>
+      <a href="https://plus.google.com/u/0/+AndrewOgryzek/"><i class="fa fa-google-plus fa-5x"></i></a>
+      <a href="http://www.twitter.com/drew_bro"><i class="fa fa-twitter fa-5x"></i></a>
+    </div>
+  </section>
+
+  <footer>
+  © db™ | DrewBro Designs <span id="year"></span>
+  </footer>
 </div>
+
+<script>
+  window.onload = function () {
+    year = new Date().getFullYear();
+    document.getElementById("year").textContent = year;
+  };
+</script>
