@@ -11,13 +11,17 @@
 <meta name="description" content="about db™ | DrewBro Designs">
 
 <div id="drewbro" class="container">
+
+  <div class="clear">
+    <a href="#menu" id="mobile-nav" onclick="navMenu()"><i class="fa fa-bars"></i></a>
+  </div>
+
   <nav class="nav nav-default">
-    <i class="logo"></i>
-    <ul>
-      <li><a href=""><div>home</div></a>
-      <li><a href=""><div>about</div></a>
-      <li><a href=""><div>portfolio</div></a>
-      <li><a href="mailto:drew@drewbro.com"><div>contact</div></a>
+    <ul class="nav-list">
+      <li><a href=""><div class="nav-div">home</div></a>
+      <li><a href="http://www.linkedin.com/profile/view?id=316501614"><div class="nav-div">about</div></a>
+      <li><a href="" title="coming soon!"><div class="nav-div">blog</div></a>
+      <li><a href="mailto:drew@drewbro.com"><div class="nav-div">contact</div></a>
     </ul>
   </nav>
 
@@ -25,18 +29,51 @@
     <div>
       <a href="http://www.github.com/ogryzek"><i class="fa fa-github fa-5x"></i></a>
       <a href="https://plus.google.com/u/0/+AndrewOgryzek/"><i class="fa fa-google-plus fa-5x"></i></a>
-      <a href="http://www.twitter.com/drew_bro"><i class="fa fa-twitter fa-5x"></i></a>
+      <a href="http://www.twitter.com/vantechpodcast"><i class="fa fa-twitter fa-5x"></i></a>
     </div>
   </section>
 
   <footer>
-  © db™ | DrewBro Designs <span id="year"></span>
+   <i class="db-icon">&#x0110;</i> db™ | DrewBro Designs 2020
   </footer>
+
 </div>
 
 <script>
-  window.onload = function () {
-    year = new Date().getFullYear();
-    document.getElementById("year").textContent = year;
-  };
+  window.onresize = resize;
+  function resize() {
+    if (window.innerWidth >= 800) {
+      showList();
+    } else {
+      hideList();
+    }
+  }
+
+  function navMenu() {
+    var navList = getArray();
+    if(navList[0].style.visibility === 'visible') {
+      hideList();
+      } else {
+      showList();
+    }
+  }
+
+  function showList() {
+    var myElArray = getArray();
+    for (var i=0;myElArray.length > i;i++) {
+      myElArray[i].style.visibility = 'visible';
+    }
+  }
+
+  function hideList() {
+    var myElArray = getArray();
+    for (var i=0; myElArray.length > i; i++) {
+      myElArray[i].style.visibility = 'hidden';
+    }
+  }
+
+    function getArray() {
+    var navItems = document.getElementsByTagName('li');
+    return navItems;
+  }
 </script>
